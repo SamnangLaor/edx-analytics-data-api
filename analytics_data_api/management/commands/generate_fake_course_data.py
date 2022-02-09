@@ -70,10 +70,10 @@ class Command(BaseCommand):
         if videos:
             video_ids = fetch_videos_from_course_blocks(course_id)
             if not video_ids:
-                logger.warning("Falling back to fake video id due to Course Blocks API failure...")
+                logger.warning("Falling back to fake video id due to Course Blocks API failure.")
                 video_ids = fake_video_ids_fallback()
         else:
-            logger.info("Option to generate videos with ids pulled from the LMS is disabled, using fake video ids...")
+            logger.info("Option to generate videos with ids pulled from the LMS is disabled, using fake video ids.")
             video_ids = fake_video_ids_fallback()
         start_date = timezone.now() - datetime.timedelta(weeks=10)
 
